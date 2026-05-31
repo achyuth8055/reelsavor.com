@@ -35,6 +35,43 @@ export function sortedPosts(): Post[] {
   return [...POSTS].sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
+/**
+ * Related posts for a given slug: same category first (excluding the current
+ * post), then filled with the most recent posts from other categories. Never
+ * includes the current post. Returns up to `limit`.
+ */
+export function getRelatedPosts(slug: string, limit = 3): Post[] {
+  const current = getPost(slug);
+  if (!current) return sortedPosts().slice(0, limit);
+  const others = sortedPosts().filter((p) => p.slug !== slug);
+  const sameCat = others.filter((p) => p.category === current.category);
+  const restCat = others.filter((p) => p.category !== current.category);
+  return [...sameCat, ...restCat].slice(0, limit);
+}
+
+/** Previous (older) and next (newer) post by date for in-article navigation. */
+export function getAdjacentPosts(slug: string): {
+  prev?: Post;
+  next?: Post;
+} {
+  const ordered = sortedPosts(); // newest first
+  const i = ordered.findIndex((p) => p.slug === slug);
+  if (i === -1) return {};
+  return {
+    next: i > 0 ? ordered[i - 1] : undefined, // newer
+    prev: i < ordered.length - 1 ? ordered[i + 1] : undefined, // older
+  };
+}
+
+/** Builds a structural "recap" checklist from the post's section headings. */
+export function recapItems(post: Post): string[] {
+  return post.sections.map((s) => s.heading).slice(0, 6);
+}
+
+export function lastUpdated(post: Post): string {
+  return post.updated || post.date;
+}
+
 export const POSTS: Post[] = [
   {
     slug: "how-to-save-your-own-instagram-reels",

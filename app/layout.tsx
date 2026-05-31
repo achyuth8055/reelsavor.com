@@ -20,6 +20,10 @@ export const metadata: Metadata = {
   SITE.googleSiteVerification !== "REPLACE_WITH_GOOGLE_SEARCH_CONSOLE_TOKEN"
     ? { verification: { google: SITE.googleSiteVerification } }
     : {}),
+  // Google AdSense site verification meta tag.
+  ...(SITE.adsensePublisherId
+    ? { other: { "google-adsense-account": SITE.adsensePublisherId } }
+    : {}),
   openGraph: {
     type: "website",
     siteName: SITE.name,
@@ -49,6 +53,7 @@ export default function RootLayout({
     url: SITE_URL,
     description: SITE.description,
     email: SITE.email,
+    founder: { "@type": "Person", name: "Achyuth Kumar" },
   };
   const gaId = SITE.googleAnalyticsId;
   return (
@@ -58,18 +63,14 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
         />
-        {/*
-          Google AdSense: do NOT add the AdSense script until the site is
-          approved. When you have a publisher ID, set it in lib/site.ts and
-          uncomment the loader below.
-          {SITE.adsensePublisherId && (
-            <script
-              async
-              src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${SITE.adsensePublisherId}`}
-              crossOrigin="anonymous"
-            />
-          )}
-        */}
+        {/* Google AdSense loader. Loads only when a publisher ID is set in lib/site.ts. */}
+        {SITE.adsensePublisherId && (
+          <script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${SITE.adsensePublisherId}`}
+            crossOrigin="anonymous"
+          />
+        )}
       </head>
       <body>
         {/* Google Analytics 4, replace the Measurement ID in lib/site.ts.

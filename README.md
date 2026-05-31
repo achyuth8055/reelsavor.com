@@ -8,10 +8,16 @@ client-side in the browser; video files are never uploaded.
 ## What's inside
 
 - **Core pages:** Home, About, Contact, Blog, Tools
-- **Legal pages:** Privacy Policy, Terms of Use, DMCA, Disclaimer
-- **5 client-side tools:** Video Compressor, Video Resizer, Thumbnail Extractor,
-  Metadata Checker, Direct Video File Downloader (direct file links only;
-  intentionally not featured on the homepage or in navigation)
+- **Legal/trust pages:** Privacy Policy, Terms of Use, DMCA, Disclaimer,
+  Editorial Standards
+- **6 client-side tools:** Video Compressor, Video Resizer, Thumbnail Extractor,
+  Metadata Checker, Freeform Crop Video, and Direct Video File Downloader
+  (direct file links only; intentionally **not** featured on the homepage or in
+  navigation)
+- **Shared, validated export pipeline** (`lib/video/`) with a Node unit-test
+  suite — run: `node --test --experimental-strip-types lib/video/exportPipeline.test.ts`
+- **E-E-A-T:** AuthorBox, Editorial Standards page, author/updated metadata on
+  every guide, related/recommended posts, prev/next navigation
 - **25 original blog posts** with FAQ schema (JSON-LD)
 - `sitemap.xml`, `robots.txt`, canonical URLs, Open Graph + Twitter tags,
   Organization / Article / FAQ / Breadcrumb structured data
@@ -60,15 +66,18 @@ is safe to deploy but **not** ready to submit to AdSense.
    placeholder never ships to production by accident. After pasting the real
    token, run `npm run build` and confirm the verification `<meta>` tag appears
    in `out/index.html`.
-2. **Active contact email** — the site shows `support@reelsavor.com`
-   (set in `lib/site.ts` → `SITE.email`) on the Contact, Privacy, DMCA, and
-   Disclaimer pages. **This mailbox MUST be live and monitored before you submit
-   to AdSense** (reviewers and DMCA senders use it). Either create that mailbox
-   or change `SITE.email` to a real address you control, then rebuild.
+2. **Active contact email** — the site uses `achyuthkumar64@gmail.com`
+   (set in `lib/site.ts` → `SITE.email` and `AUTHOR.email`) on the Contact,
+   Privacy, DMCA, Disclaimer, and author pages. Keep this mailbox monitored —
+   AdSense reviewers and DMCA senders use it. The named author/owner is
+   **Achyuth Kumar** (`AUTHOR` in `lib/site.ts`).
 3. **GA4 Measurement ID** — replace `G-XXXXXXXXXX` with your real ID (optional
    but recommended). It is omitted from output while it stays as the placeholder.
 4. **Publisher ID** — leave `adsensePublisherId` empty until Google approves the
    site, then set it and uncomment the loader in `app/layout.tsx`.
+5. **ads.txt** — after approval, add a `public/ads.txt` file containing your
+   AdSense line, e.g. `google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0`.
+   It will be served at `/ads.txt`.
 
 ## Cloudflare Pages Deployment
 

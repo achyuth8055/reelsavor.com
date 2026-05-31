@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumb, PermissionNote } from "@/components/Bits";
+import { ToolIcon } from "@/components/Illustrations";
 import { TOOLS } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -30,6 +31,9 @@ export default function ToolsIndex() {
           <div className="grid">
             {TOOLS.map((t) => (
               <Link key={t.slug} href={`/tools/${t.slug}/`} className="card">
+                <span className="card-icon" aria-hidden>
+                  <ToolIcon slug={t.slug} size={26} />
+                </span>
                 <h3>{t.title}</h3>
                 <p>{t.short}</p>
                 <span className="card-link">Open tool →</span>

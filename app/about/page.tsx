@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Breadcrumb } from "@/components/Bits";
+import { AuthorBox, Breadcrumb } from "@/components/Bits";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -65,6 +65,17 @@ export default function About() {
           </li>
         </ul>
 
+        <h2>Our tool philosophy</h2>
+        <p>
+          We build small, honest tools that do one job well and tell you the
+          truth about the result. Our video tools run entirely in your browser,
+          so your files never leave your device. We validate every export before
+          offering a download, match the file extension to the real format, and
+          never present a larger or empty file as a successful compression. If
+          your browser can&apos;t export safely, we say so instead of producing a
+          broken file.
+        </p>
+
         <h2>Privacy by design</h2>
         <p>
           Because our tools process video directly in your browser, the videos
@@ -73,12 +84,25 @@ export default function About() {
           <Link href="/privacy-policy/">Privacy Policy</Link>.
         </p>
 
+        <h2>Editorial standards</h2>
+        <p>
+          Our guides are researched from documented platform specifications and
+          established video fundamentals, reviewed for accuracy and safety, and
+          dated so you know when they were last updated. We keep our language
+          copyright-safe and avoid anything that encourages misusing other
+          people&apos;s content. Read the full{" "}
+          <Link href="/editorial-standards/">editorial standards</Link>, including
+          how to request a correction.
+        </p>
+
         <h2>Get in touch</h2>
         <p>
-          Questions, feedback, or a guide you&apos;d like us to write? Reach us
-          through the <Link href="/contact/">contact page</Link>. We read every
-          message.
+          Questions, feedback, a correction, or a guide you&apos;d like us to
+          write? Reach us through the <Link href="/contact/">contact page</Link>.
+          We read every message.
         </p>
+
+        <AuthorBox />
       </div>
     </article>
   );

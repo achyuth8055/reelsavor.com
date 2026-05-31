@@ -30,6 +30,15 @@ export default function Contact() {
           . We aim to reply within a few business days.
         </p>
 
+        <h2>Reasons to get in touch</h2>
+        <ul>
+          <li><strong>Corrections:</strong> tell us if a guide has an error or an outdated step.</li>
+          <li><strong>Copyright concerns:</strong> report content issues (see also our <Link href="/dmca/">DMCA page</Link>).</li>
+          <li><strong>Tool issues:</strong> a tool didn&apos;t work as expected, or an export failed.</li>
+          <li><strong>Business inquiries:</strong> partnerships and other professional questions.</li>
+          <li><strong>Accessibility feedback:</strong> tell us where we can make the site easier to use.</li>
+        </ul>
+
         <h2>Send a message</h2>
         <p>
           You can also use the form below. It opens your own email app with the

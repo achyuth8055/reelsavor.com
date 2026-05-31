@@ -9,15 +9,33 @@ export const SITE = {
   tagline: "Free guides and tools for creators to manage videos they own or have permission to use.",
   description:
     "Reelsavor offers free, browser-based tools and clear guides to help creators compress, resize, check, and prepare videos they own or have permission to use. Nothing is uploaded to a server.",
-  email: "support@reelsavor.com",
+  email: "achyuthkumar64@gmail.com",
   // Replace with your real verification token from Google Search Console.
   googleSiteVerification: "REPLACE_WITH_GOOGLE_SEARCH_CONSOLE_TOKEN",
   // Replace with your real Google Analytics 4 Measurement ID, e.g. G-XXXXXXXXXX.
   googleAnalyticsId: "G-XXXXXXXXXX",
-  // Leave empty until your site is approved. Example: "ca-pub-1234567890123456".
-  adsensePublisherId: "",
+  // Google AdSense publisher ID (site approved).
+  adsensePublisherId: "ca-pub-8069357472142495",
   twitter: "@reelsavor",
   ogImage: "/og-image.svg",
+};
+
+// Named author / editor for E-E-A-T (real person, real contact).
+export const AUTHOR = {
+  name: "Achyuth Kumar",
+  role: "Founder & Editor, Reelsavor",
+  email: "achyuthkumar64@gmail.com",
+  initials: "AK",
+  bio: "Achyuth Kumar is the founder and editor of Reelsavor. He writes and reviews practical, copyright-conscious guides for video creators, small businesses, and everyday users who want to prepare, resize, compress, crop, and manage videos they own or have permission to use.",
+  expertise: [
+    "Video formats & codecs",
+    "Aspect ratios",
+    "Creator workflows",
+    "Compression basics",
+    "Cropping workflows",
+    "Thumbnail workflows",
+    "Responsible content use",
+  ],
 };
 
 export const NAV_LINKS = [
@@ -31,6 +49,7 @@ export const NAV_LINKS = [
 export const FOOTER_LINKS = [
   { href: "/about/", label: "About" },
   { href: "/contact/", label: "Contact" },
+  { href: "/editorial-standards/", label: "Editorial Standards" },
   { href: "/privacy-policy/", label: "Privacy Policy" },
   { href: "/terms/", label: "Terms of Use" },
   { href: "/dmca/", label: "DMCA" },
@@ -69,6 +88,12 @@ export const TOOLS: Tool[] = [
     slug: "video-metadata-checker",
     title: "Video Metadata Checker",
     short: "See resolution, duration, file size, and format of your video.",
+    featured: true,
+  },
+  {
+    slug: "freeform-crop-video",
+    title: "Freeform Crop Video",
+    short: "Crop a video you own to any area or aspect ratio, right in your browser.",
     featured: true,
   },
   {

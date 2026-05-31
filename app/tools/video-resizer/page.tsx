@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import {
-  Breadcrumb,
+  Callout,
   FaqJsonLd,
   FaqSection,
   PermissionNote,
   RelatedLinks,
 } from "@/components/Bits";
+import { ToolHero, StepCards } from "@/components/ToolPage";
 import VideoResizer from "@/components/tools/VideoResizer";
 
 export const metadata: Metadata = {
@@ -30,7 +31,7 @@ const faqs = [
   },
   {
     q: "Will resizing reduce quality?",
-    a: "Resizing re-encodes the video, which carries some loss. Starting from a high-quality source keeps the result sharp. Output is MP4 or WebM depending on your browser.",
+    a: "Resizing re-encodes the video, which carries some loss. Starting from a high-quality source keeps the result sharp. Most browsers export WebM; the download extension always matches the real output format.",
   },
   {
     q: "How long does it take?",
@@ -47,25 +48,24 @@ const related = [
 
 export default function Page() {
   return (
-    <article className="article">
-      <div className="container">
+    <article>
+      <ToolHero
+        slug="video-resizer"
+        title="Video Resizer"
+        subtitle="Change the shape of a video you own to fit any platform. Pick a preset like 9:16 for Reels and TikTok, choose crop-to-fill or fit-with-bars, preview, and download — all in your browser."
+      />
+      <div className="container" style={{ padding: "28px 20px 64px" }}>
         <div className="prose">
-          <Breadcrumb
-            items={[
-              { href: "/", label: "Home" },
-              { href: "/tools/", label: "Tools" },
-              { label: "Video Resizer" },
+          <VideoResizer />
+
+          <StepCards
+            steps={[
+              { title: "Choose your video", body: "Select a clip you own. Its dimensions are read locally; nothing is uploaded." },
+              { title: "Pick a target shape", body: "Use a preset (9:16, 4:5, 1:1, 16:9) or set custom dimensions. We never upscale unless you ask." },
+              { title: "Crop or fit", body: "Crop-to-fill for a full-screen look, or fit-with-bars to keep the whole frame." },
+              { title: "Preview & download", body: "We validate the export and show a preview before you download the resized file." },
             ]}
           />
-          <h1>Free Video Resizer</h1>
-          <p>
-            Change the shape of a video you own to fit any platform. Pick a
-            preset like 9:16 for Reels and TikTok, or set custom dimensions, and
-            choose whether to crop to fill or fit with bars. Everything runs in
-            your browser, your file is never uploaded.
-          </p>
-
-          <VideoResizer />
 
           <h2>Why aspect ratio matters</h2>
           <p>
@@ -90,6 +90,18 @@ export default function Page() {
             any part of the frame, such as slides or footage with text near the
             edges.
           </p>
+
+          <Callout kind="tip" title="Keep your subject centered">
+            On vertical platforms, the app interface covers the bottom and right
+            edges. Center your subject so it survives both the crop and the
+            on-screen buttons.
+          </Callout>
+
+          <Callout kind="mistake" title="Common mistakes">
+            Upscaling a small clip to 1080p (it can&apos;t add real detail);
+            cropping off important edges; and forgetting that captions live near
+            the frame edges on Reels, TikTok, and Shorts.
+          </Callout>
 
           <PermissionNote />
           <FaqSection faqs={faqs} />

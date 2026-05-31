@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import {
-  Breadcrumb,
   FaqJsonLd,
   FaqSection,
   PermissionNote,
   RelatedLinks,
 } from "@/components/Bits";
+import { ToolHero, StepCards } from "@/components/ToolPage";
 import MetadataChecker from "@/components/tools/MetadataChecker";
 
 export const metadata: Metadata = {
@@ -47,25 +47,24 @@ const related = [
 
 export default function Page() {
   return (
-    <article className="article">
-      <div className="container">
+    <article>
+      <ToolHero
+        slug="video-metadata-checker"
+        title="Video Metadata Checker"
+        subtitle="Find out exactly what you're working with. Drop in a video you own and instantly see its resolution, aspect ratio, duration, format, and file size — read locally, never uploaded."
+        chips={["Runs in your browser", "No uploads", "Instant results"]}
+      />
+      <div className="container" style={{ padding: "28px 20px 64px" }}>
         <div className="prose">
-          <Breadcrumb
-            items={[
-              { href: "/", label: "Home" },
-              { href: "/tools/", label: "Tools" },
-              { label: "Video Metadata Checker" },
+          <MetadataChecker />
+
+          <StepCards
+            steps={[
+              { title: "Choose your video", body: "Drop in or select a clip you own. It's read locally — nothing is uploaded." },
+              { title: "Read the details", body: "Resolution, aspect ratio, duration, file size, and format appear instantly." },
+              { title: "Plan your next step", body: "Compare against your platform's specs, then resize or compress if needed." },
             ]}
           />
-          <h1>Free Video Metadata Checker</h1>
-          <p>
-            Find out exactly what you&apos;re working with. Drop in a video you
-            own and instantly see its resolution, aspect ratio, duration,
-            format, and file size. The file is read locally in your browser and
-            never uploaded.
-          </p>
-
-          <MetadataChecker />
 
           <h2>What the numbers mean</h2>
           <ul>

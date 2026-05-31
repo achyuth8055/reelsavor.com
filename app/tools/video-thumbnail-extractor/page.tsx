@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import {
-  Breadcrumb,
+  Callout,
   FaqJsonLd,
   FaqSection,
   PermissionNote,
   RelatedLinks,
 } from "@/components/Bits";
+import { ToolHero, StepCards } from "@/components/ToolPage";
 import ThumbnailExtractor from "@/components/tools/ThumbnailExtractor";
 
 export const metadata: Metadata = {
@@ -47,25 +48,24 @@ const related = [
 
 export default function Page() {
   return (
-    <article className="article">
-      <div className="container">
+    <article>
+      <ToolHero
+        slug="video-thumbnail-extractor"
+        title="Video Thumbnail Extractor"
+        subtitle="Pull a single great frame out of a video you own and save it as a PNG or JPEG — perfect for cover thumbnails and previews. Scrub to the exact moment and download, all in your browser."
+      />
+      <div className="container" style={{ padding: "28px 20px 64px" }}>
         <div className="prose">
-          <Breadcrumb
-            items={[
-              { href: "/", label: "Home" },
-              { href: "/tools/", label: "Tools" },
-              { label: "Video Thumbnail Extractor" },
+          <ThumbnailExtractor />
+
+          <StepCards
+            steps={[
+              { title: "Choose your video", body: "Select a clip you own. It's read locally in your browser — never uploaded." },
+              { title: "Scrub to the frame", body: "Use the slider to land on the exact moment. Pause on a sharp, well-lit beat." },
+              { title: "Pick a format", body: "PNG for lossless quality (great for text overlays) or JPEG for a smaller file." },
+              { title: "Capture & download", body: "The frame is saved at the video's native resolution, straight to your device." },
             ]}
           />
-          <h1>Free Video Thumbnail Extractor</h1>
-          <p>
-            Pull a single great frame out of a video you own and save it as an
-            image, perfect for cover thumbnails and previews. Scrub to the exact
-            moment, choose PNG or JPEG, and download. It all happens in your
-            browser.
-          </p>
-
-          <ThumbnailExtractor />
 
           <h2>Why use a frame from your own video</h2>
           <p>

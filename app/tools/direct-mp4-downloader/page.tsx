@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import {
-  Breadcrumb,
   FaqJsonLd,
   FaqSection,
   PermissionNote,
   RelatedLinks,
 } from "@/components/Bits";
+import { ToolHero } from "@/components/ToolPage";
 import DirectMp4Downloader from "@/components/tools/DirectMp4Downloader";
 
 export const metadata: Metadata = {
@@ -47,31 +47,16 @@ const related = [
 
 export default function Page() {
   return (
-    <article className="article">
-      <div className="container">
+    <article>
+      <ToolHero
+        slug="direct-mp4-downloader"
+        eyebrow="Direct file tool"
+        title="Direct Video File Downloader"
+        subtitle="Save a direct video file URL (such as .mp4) you own or have permission to use. Direct video file URLs only — social platform URLs are not supported, and private, protected, DRM, or copyrighted content without permission is not allowed."
+        chips={["Direct file URLs only", "Files you own", "No platform URLs"]}
+      />
+      <div className="container" style={{ padding: "28px 20px 64px" }}>
         <div className="prose">
-          <Breadcrumb
-            items={[
-              { href: "/", label: "Home" },
-              { href: "/tools/", label: "Tools" },
-              { label: "Direct Video File Downloader" },
-            ]}
-          />
-          <h1>Direct Video File Downloader</h1>
-          <p>
-            A simple way to save a <strong>direct video file</strong> you own or
-            have permission to use, for example, a <code>.mp4</code> you host
-            yourself or a file a creator has shared with you directly. This tool
-            accepts <strong>direct video file URLs only</strong>, works only with{" "}
-            <strong>videos you own or have permission to use</strong>, and{" "}
-            <strong>social platform URLs are not supported</strong>. Downloading{" "}
-            <strong>
-              private, protected, DRM, or copyrighted content without permission
-              is not allowed
-            </strong>
-            .
-          </p>
-
           <DirectMp4Downloader />
 
           <h2>What this tool is, and isn&apos;t</h2>
