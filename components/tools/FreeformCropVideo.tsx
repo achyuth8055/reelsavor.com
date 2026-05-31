@@ -401,10 +401,10 @@ export default function FreeformCropVideo() {
 
           <div className="crop-readout">
             <span className="crop-dim">
-              {sr ? `${sr.w} × ${sr.h} px` : "—"}
+              {sr ? `${sr.w} × ${sr.h} px` : "N/A"}
             </span>
             <span className="crop-ratio">
-              {sr ? aspectRatioLabel(sr.w, sr.h) : "—"}
+              {sr ? aspectRatioLabel(sr.w, sr.h) : "N/A"}
             </span>
           </div>
 

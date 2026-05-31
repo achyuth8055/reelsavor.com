@@ -171,7 +171,7 @@ export default function VideoCompressor() {
         <p className="muted" style={{ margin: "6px 0 0" }}>
           {file && meta
             ? `${meta.width} × ${meta.height} · ${formatFileSize(file.size)} · runs entirely in your browser`
-            : "Processed entirely in your browser — never uploaded."}
+            : "Processed entirely in your browser, never uploaded."}
         </p>
         <input
           ref={inputRef}
@@ -185,7 +185,7 @@ export default function VideoCompressor() {
       {smallWarn && phase !== "processing" && (
         <div className="notice" role="note">
           <strong>This file is already very small ({formatFileSize(file!.size)}).</strong>{" "}
-          Compression may not reduce it further — and can even make it larger. You
+          Compression may not reduce it further, and can even make it larger. You
           can still try below; we&apos;ll tell you honestly what happened.
         </div>
       )}

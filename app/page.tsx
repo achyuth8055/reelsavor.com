@@ -60,8 +60,8 @@ const USE_CASES = [
   },
   {
     href: "/tools/video-thumbnail-extractor/",
-    title: "Grab a thumbnail from your video",
-    body: "Scrub to the perfect frame and export it as a high-quality cover image.",
+    title: "Download YouTube thumbnails or grab a frame",
+    body: "Pull a YouTube video's thumbnails in any size, or capture a frame from your own clip.",
   },
   {
     href: "/tools/video-metadata-checker/",

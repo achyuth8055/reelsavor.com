@@ -15,7 +15,7 @@ client-side in the browser; video files are never uploaded.
   (direct file links only; intentionally **not** featured on the homepage or in
   navigation)
 - **Shared, validated export pipeline** (`lib/video/`) with a Node unit-test
-  suite — run: `node --test --experimental-strip-types lib/video/exportPipeline.test.ts`
+  suite, run: `node --test --experimental-strip-types lib/video/exportPipeline.test.ts`
 - **E-E-A-T:** AuthorBox, Editorial Standards page, author/updated metadata on
   every guide, related/recommended posts, prev/next navigation
 - **25 original blog posts** with FAQ schema (JSON-LD)
@@ -58,7 +58,7 @@ Edit `lib/site.ts` before deploying:
 These are the real values you must set yourself. Until they are done, the site
 is safe to deploy but **not** ready to submit to AdSense.
 
-1. **Google Search Console token** — open `lib/site.ts` and replace
+1. **Google Search Console token**, open `lib/site.ts` and replace
    `googleSiteVerification: "REPLACE_WITH_GOOGLE_SEARCH_CONSOLE_TOKEN"` with the
    token Google gives you (the value from the `content="..."` attribute of the
    HTML-tag verification method). While it stays as the placeholder, **no
@@ -66,16 +66,16 @@ is safe to deploy but **not** ready to submit to AdSense.
    placeholder never ships to production by accident. After pasting the real
    token, run `npm run build` and confirm the verification `<meta>` tag appears
    in `out/index.html`.
-2. **Active contact email** — the site uses `achyuthkumar64@gmail.com`
+2. **Active contact email**, the site uses `achyuthkumar64@gmail.com`
    (set in `lib/site.ts` → `SITE.email` and `AUTHOR.email`) on the Contact,
-   Privacy, DMCA, Disclaimer, and author pages. Keep this mailbox monitored —
+   Privacy, DMCA, Disclaimer, and author pages. Keep this mailbox monitored,
    AdSense reviewers and DMCA senders use it. The named author/owner is
    **Achyuth Kumar** (`AUTHOR` in `lib/site.ts`).
-3. **GA4 Measurement ID** — replace `G-XXXXXXXXXX` with your real ID (optional
+3. **GA4 Measurement ID**, replace `G-XXXXXXXXXX` with your real ID (optional
    but recommended). It is omitted from output while it stays as the placeholder.
-4. **Publisher ID** — leave `adsensePublisherId` empty until Google approves the
+4. **Publisher ID**, leave `adsensePublisherId` empty until Google approves the
    site, then set it and uncomment the loader in `app/layout.tsx`.
-5. **ads.txt** — after approval, add a `public/ads.txt` file containing your
+5. **ads.txt**, after approval, add a `public/ads.txt` file containing your
    AdSense line, e.g. `google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0`.
    It will be served at `/ads.txt`.
 

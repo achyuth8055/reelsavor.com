@@ -1,7 +1,7 @@
 import { Breadcrumb } from "@/components/Bits";
 import { ToolIcon } from "@/components/Illustrations";
 
-const DEFAULT_CHIPS = ["Runs in your browser", "No uploads", "Free — no sign-up"];
+const DEFAULT_CHIPS = ["Runs in your browser", "No uploads", "Free, no sign-up"];
 
 export function ToolHero({
   slug,

@@ -18,10 +18,10 @@ import {
 } from "@/lib/video/reencodeClient";
 
 const PRESETS = [
-  { label: "9:16 — 1080 × 1920 (Reels, TikTok, Shorts)", w: 1080, h: 1920 },
-  { label: "4:5 — 1080 × 1350 (Feed portrait)", w: 1080, h: 1350 },
-  { label: "1:1 — 1080 × 1080 (Square)", w: 1080, h: 1080 },
-  { label: "16:9 — 1920 × 1080 (Landscape)", w: 1920, h: 1080 },
+  { label: "9:16, 1080 × 1920 (Reels, TikTok, Shorts)", w: 1080, h: 1920 },
+  { label: "4:5, 1080 × 1350 (Feed portrait)", w: 1080, h: 1350 },
+  { label: "1:1, 1080 × 1080 (Square)", w: 1080, h: 1080 },
+  { label: "16:9, 1920 × 1080 (Landscape)", w: 1920, h: 1080 },
   { label: "Custom", w: 0, h: 0 },
 ];
 
@@ -156,7 +156,7 @@ export default function VideoResizer() {
         <p className="muted" style={{ margin: "6px 0 0" }}>
           {file && meta
             ? `${meta.width} × ${meta.height} · ${formatFileSize(file.size)} · never uploaded`
-            : "Processed entirely in your browser — never uploaded."}
+            : "Processed entirely in your browser, never uploaded."}
         </p>
         <input ref={inputRef} type="file" accept="video/*" hidden onChange={(e) => pick(e.target.files?.[0])} />
       </div>

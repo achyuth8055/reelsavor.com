@@ -32,6 +32,8 @@ export type ReencodeOptions = {
   //  - "contain": scale to fit, letterbox with black bars
   fit?: "fill" | "cover" | "contain";
   videoBitsPerSecond?: number;
+  // When false, the output has no audio track (e.g. "silent video" export).
+  includeAudio?: boolean;
   onProgress?: (fraction: number) => void;
 };
 
@@ -65,6 +67,7 @@ export async function reencodeVideo(
     srcRect,
     fit = "cover",
     videoBitsPerSecond,
+    includeAudio = true,
     onProgress,
   } = opts;
 
@@ -138,7 +141,7 @@ export async function reencodeVideo(
     try {
       const AC: typeof AudioContext | undefined =
         (window as any).AudioContext || (window as any).webkitAudioContext;
-      if (AC) {
+      if (AC && includeAudio) {
         const ctxAudio = new AC();
         audioCtx = ctxAudio;
         const source = ctxAudio.createMediaElementSource(video);

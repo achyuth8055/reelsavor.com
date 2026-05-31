@@ -80,15 +80,15 @@ export const TOOLS: Tool[] = [
   },
   {
     slug: "video-thumbnail-extractor",
-    title: "Video Thumbnail Extractor",
-    short: "Grab a still frame from your video and save it as an image.",
+    title: "YouTube Thumbnail Downloader",
+    short: "Download a YouTube video's thumbnails in any size, or grab a frame from your own video.",
     featured: true,
   },
   {
     slug: "video-metadata-checker",
     title: "Video Metadata Checker",
     short: "See resolution, duration, file size, and format of your video.",
-    featured: true,
+    featured: false,
   },
   {
     slug: "freeform-crop-video",
@@ -97,11 +97,34 @@ export const TOOLS: Tool[] = [
     featured: true,
   },
   {
-    slug: "direct-mp4-downloader",
-    title: "Direct Video File Downloader",
-    short:
-      "Save a direct video file URL (such as .mp4) you own or have permission to use. Social platform URLs are not supported.",
+    slug: "screen-recorder",
+    title: "Screen Recorder",
+    short: "Record your screen in the browser and download the clip. Nothing is uploaded.",
+    featured: true,
+  },
+  {
+    slug: "youtube-thumbnail-maker",
+    title: "YouTube Thumbnail Maker",
+    short: "Design a thumbnail from your own image with templates, text, and badges.",
+    featured: true,
+  },
+  {
+    slug: "media-layout-editor",
+    title: "Media Layout Editor",
+    short: "Drop your media into layout templates and export a still layout image.",
+    featured: true,
+  },
+  {
+    slug: "youtube-thumbnail-resizer",
+    title: "YouTube Thumbnail Resizer",
+    short: "Resize your own image to YouTube thumbnail and Shorts cover sizes in your browser.",
     featured: false,
+  },
+  {
+    slug: "extract-audio-from-video",
+    title: "Extract Audio from Video",
+    short: "Split a video you own into a separate audio file and a silent video, right in your browser.",
+    featured: true,
   },
 ];
 

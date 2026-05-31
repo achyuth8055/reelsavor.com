@@ -52,9 +52,10 @@ export default function About() {
               thumbnail extractor
             </Link>
             , <Link href="/tools/video-metadata-checker/">metadata checker</Link>
-            , and a{" "}
-            <Link href="/tools/direct-mp4-downloader/">
-              direct video file downloader
+            , a{" "}
+            <Link href="/tools/screen-recorder/">screen recorder</Link>, and a{" "}
+            <Link href="/tools/youtube-thumbnail-maker/">
+              thumbnail maker
             </Link>{" "}
             for files you own.
           </li>

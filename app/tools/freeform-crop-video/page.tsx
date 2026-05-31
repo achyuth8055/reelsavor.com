@@ -61,6 +61,7 @@ const relatedTools = [
   { href: "/tools/video-resizer/", label: "Video Resizer" },
   { href: "/tools/video-compressor/", label: "Video Compressor" },
   { href: "/tools/video-metadata-checker/", label: "Video Metadata Checker" },
+  { href: "/tools/youtube-thumbnail-resizer/", label: "YouTube Thumbnail Resizer" },
 ];
 
 const relatedGuides = [
@@ -75,7 +76,7 @@ export default function Page() {
       <ToolHero
         slug="freeform-crop-video"
         title="Freeform Crop Video"
-        subtitle="Trim a video you own down to exactly the part that matters. Drag a freeform crop box anywhere on the frame, or lock it to 9:16, 1:1, 4:5, or 16:9. Preview the result and export — all in your browser."
+        subtitle="Trim a video you own down to exactly the part that matters. Drag a freeform crop box anywhere on the frame, or lock it to 9:16, 1:1, 4:5, or 16:9. Preview the result and export, all in your browser."
       />
       <div className="container" style={{ padding: "28px 20px 64px" }}>
         <div className="prose">
@@ -90,8 +91,8 @@ export default function Page() {
           <h2>What freeform video cropping does</h2>
           <p>
             Cropping keeps a chosen rectangle of the video frame and discards the
-            rest. Unlike resizing — which changes the overall dimensions of the
-            whole frame — cropping changes <em>what is in the frame</em>. It is
+            rest. Unlike resizing, which changes the overall dimensions of the
+            whole frame, cropping changes <em>what is in the frame</em>. It is
             the right tool when you want to remove distracting edges, recenter a
             subject, turn a landscape clip into a vertical one, or focus on a
             specific corner of the action.
@@ -109,7 +110,7 @@ export default function Page() {
           <h2>How to crop a video</h2>
           <ol>
             <li>Choose a video you own or have permission to edit.</li>
-            <li>Pick a crop shape — Freeform for any rectangle, or a fixed ratio like 9:16.</li>
+            <li>Pick a crop shape, Freeform for any rectangle, or a fixed ratio like 9:16.</li>
             <li>Drag the crop box to move it; drag the corner handles to resize. The box always stays inside the video.</li>
             <li>Check the crop dimensions and aspect ratio shown below the preview.</li>
             <li>Click <strong>Crop &amp; export</strong>, preview the result, and download.</li>

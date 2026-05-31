@@ -44,6 +44,7 @@ const related = [
   { href: "/blog/how-to-resize-video-for-instagram-reels/", label: "Resize video for Instagram Reels" },
   { href: "/blog/video-aspect-ratio-guide/", label: "Video aspect ratio guide" },
   { href: "/tools/video-metadata-checker/", label: "Verify the output dimensions" },
+  { href: "/tools/youtube-thumbnail-resizer/", label: "YouTube Thumbnail Resizer" },
 ];
 
 export default function Page() {
@@ -52,7 +53,7 @@ export default function Page() {
       <ToolHero
         slug="video-resizer"
         title="Video Resizer"
-        subtitle="Change the shape of a video you own to fit any platform. Pick a preset like 9:16 for Reels and TikTok, choose crop-to-fill or fit-with-bars, preview, and download — all in your browser."
+        subtitle="Change the shape of a video you own to fit any platform. Pick a preset like 9:16 for Reels and TikTok, choose crop-to-fill or fit-with-bars, preview, and download, all in your browser."
       />
       <div className="container" style={{ padding: "28px 20px 64px" }}>
         <div className="prose">

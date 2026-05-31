@@ -339,15 +339,51 @@ p { margin: 0 0 1rem; }
   margin: 24px 0;
 }
 .dropzone {
-  border: 2px dashed var(--border);
+  border: 2px dashed #c4d2ea;
   border-radius: var(--radius);
-  padding: 34px 20px;
+  padding: 44px 24px;
   text-align: center;
   color: var(--text-soft);
   cursor: pointer;
-  transition: border-color 0.15s ease, background 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background:
+    radial-gradient(120% 130% at 50% -10%, var(--brand-soft) 0%, rgba(234, 241, 255, 0) 55%),
+    var(--bg-card);
+  transition: border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease, transform 0.1s ease;
 }
-.dropzone:hover, .dropzone.drag { border-color: var(--brand); background: var(--brand-soft); }
+.dropzone::before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 12px;
+  border-radius: 16px;
+  border: 1px solid #cbdcff;
+  background-color: var(--brand-soft);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 24 24' fill='none' stroke='%232f6df6' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 16V4'/%3E%3Cpath d='M7 9l5-5 5 5'/%3E%3Cpath d='M5 16v3a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30px;
+  transition: transform 0.18s ease, background-color 0.18s ease;
+}
+.dropzone strong { color: var(--text); font-size: 1.06rem; }
+.dropzone:hover,
+.dropzone.drag {
+  border-color: var(--brand);
+  background:
+    radial-gradient(120% 130% at 50% -10%, #dde9ff 0%, rgba(221, 233, 255, 0) 60%),
+    var(--brand-soft);
+  box-shadow: 0 10px 30px rgba(47, 109, 246, 0.1);
+}
+.dropzone:hover::before,
+.dropzone.drag::before {
+  transform: translateY(-3px);
+  background-color: #fff;
+}
+.dropzone.drag { transform: scale(1.004); }
 .field { margin: 16px 0; }
 .field label { display: block; font-weight: 600; margin-bottom: 6px; }
 .field input[type="text"], .field input[type="url"], .field select, .field input[type="number"] {
@@ -444,6 +480,132 @@ p { margin: 0 0 1rem; }
 .progress { height: 8px; background: var(--border); border-radius: 999px; overflow: hidden; margin: 12px 0; }
 .progress > span { display: block; height: 100%; background: var(--brand); width: 0; transition: width 0.2s ease; }
 .muted { color: var(--text-soft); font-size: 0.92rem; }
+
+/* ---------- YouTube thumbnail resizer ---------- */
+.ytr-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 22px;
+  align-items: start;
+}
+.ytr-preview {
+  background: repeating-conic-gradient(#eef2f8 0% 25%, #ffffff 0% 50%) 50% / 24px 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ytr-canvas {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(20, 30, 60, 0.18);
+  background: #fff;
+  touch-action: none;
+}
+.ytr-controls { display: grid; gap: 4px; }
+.ytr-controls .field { margin: 8px 0; }
+@media (max-width: 760px) {
+  .ytr-layout { grid-template-columns: 1fr; }
+}
+
+/* ---------- Template cards (thumbnail maker / layout editor) ---------- */
+.tpl-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); margin: 12px 0; }
+.tpl-card {
+  display: flex; flex-direction: column; gap: 6px; text-align: left;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: #fff; padding: 10px; cursor: pointer;
+  transition: box-shadow 0.12s ease, transform 0.12s ease, border-color 0.12s ease;
+  font: inherit; color: var(--text);
+}
+.tpl-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); border-color: var(--brand); }
+.tpl-thumb {
+  display: flex; width: 100%; aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden;
+  align-items: stretch; justify-content: stretch;
+}
+.tpl-thumb > span { display: flex; width: 100%; height: 100%; }
+
+/* ---------- Thumbnail maker: refined editor UI ---------- */
+@media (min-width: 761px) {
+  .ytr-preview { position: sticky; top: 84px; }
+}
+.ytr-canvas-wrap { display: flex; }
+
+/* Upload overlay shown on the preview before an image is added */
+.ytr-upload-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 2px dashed #c4d2ea;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(1px);
+  color: var(--text-soft);
+  cursor: pointer;
+  font: inherit;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.ytr-upload-overlay strong { color: var(--text); font-size: 1.02rem; }
+.ytr-upload-overlay:hover,
+.ytr-upload-overlay.drag {
+  border-color: var(--brand);
+  background: rgba(234, 241, 255, 0.9);
+}
+.ytr-upload-badge {
+  width: 46px; height: 46px;
+  display: grid; place-items: center;
+  margin-bottom: 6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--brand), var(--accent));
+  color: #fff; font-size: 1.6rem; font-weight: 700; line-height: 1;
+}
+
+/* Grouped control sections */
+.control-group {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 14px 4px;
+  margin-bottom: 12px;
+  background: var(--bg-card);
+}
+.control-head {
+  margin: 0 0 4px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+
+/* Segmented toggle control */
+.seg {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg-soft);
+}
+.seg-btn {
+  flex: 1;
+  padding: 9px 8px;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-soft);
+  cursor: pointer;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+.seg-btn + .seg-btn { border-left: 1px solid var(--border); }
+.seg-btn:hover { color: var(--brand); }
+.seg-btn.active { background: var(--brand); color: #fff; }
 
 /* ---------- Footer ---------- */
 .site-footer {

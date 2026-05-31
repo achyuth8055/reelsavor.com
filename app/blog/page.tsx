@@ -5,7 +5,7 @@ import { Breadcrumb } from "@/components/Bits";
 import { ArticleHeroArt } from "@/components/Illustrations";
 
 export const metadata: Metadata = {
-  title: "Blog — Guides for Creators",
+  title: "Blog, Guides for Creators",
   description:
     "Original guides on resizing, compressing, cropping, and preparing videos you own or have permission to use. Written and reviewed by Achyuth Kumar for Reelsavor.",
   alternates: { canonical: "/blog/" },

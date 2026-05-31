@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import {
-  Callout,
   FaqJsonLd,
   FaqSection,
   PermissionNote,
@@ -10,32 +9,32 @@ import { ToolHero, StepCards } from "@/components/ToolPage";
 import ThumbnailExtractor from "@/components/tools/ThumbnailExtractor";
 
 export const metadata: Metadata = {
-  title: "Free Video Thumbnail Extractor",
+  title: "YouTube Thumbnail Downloader & Video Frame Grabber",
   description:
-    "Grab a still frame from a video you own and save it as a PNG or JPEG image. Scrub to the exact moment and download in one click. No uploads, nothing stored.",
+    "Paste a YouTube link to download its thumbnails in every size (HD, SD, HQ), or grab a still frame from your own video as PNG or JPEG. Free, in your browser, no uploads.",
   alternates: { canonical: "/tools/video-thumbnail-extractor/" },
 };
 
 const faqs = [
   {
-    q: "Does this upload my video?",
-    a: "No. The extractor reads your video locally in the browser and captures the frame on your device. Nothing is uploaded or stored on a server.",
+    q: "How do I download a YouTube thumbnail?",
+    a: "Paste the video link (or its 11-character ID) and click Get thumbnails. We show every size YouTube publishes, from full HD down to medium. Click Download on the one you want.",
   },
   {
-    q: "What image formats can I save?",
-    a: "PNG for lossless quality (great for graphics or adding text) and JPEG for a smaller file (good for photographic frames). Both work on every major platform.",
+    q: "What thumbnail sizes are available?",
+    a: "YouTube publishes up to four: max resolution (1280 × 720), standard (640 × 480), high quality (480 × 360), and medium (320 × 180). Older or lower-resolution videos may not have the largest sizes, so we hide the ones that do not exist.",
   },
   {
-    q: "What resolution will the thumbnail be?",
-    a: "It matches the video's frame resolution. A 1080p video produces a 1920 × 1080 image (or 1080 × 1920 if vertical).",
+    q: "Can I grab a frame from my own video instead?",
+    a: "Yes. Switch to the \"From your own video\" tab, choose a file you own, scrub to the exact moment, and save it as a PNG or JPEG. That mode runs entirely on your device with no upload.",
   },
   {
-    q: "Can I pick the exact frame?",
-    a: "Yes. Use the position slider to scrub to the precise moment you want, then capture. Avoid motion-blurred frames by pausing on a still beat.",
+    q: "Is it free, and do I need an account?",
+    a: "It is completely free with no sign-up. The tool runs in your browser.",
   },
   {
-    q: "Does it work on mobile?",
-    a: "Yes, it works in modern mobile browsers, so you can grab a thumbnail directly from your phone.",
+    q: "Can I reuse a thumbnail I download?",
+    a: "Thumbnails belong to the channel that created them. Use them for reference or content you have the right to make. Reposting someone else's thumbnail as your own may infringe their copyright.",
   },
 ];
 
@@ -51,8 +50,8 @@ export default function Page() {
     <article>
       <ToolHero
         slug="video-thumbnail-extractor"
-        title="Video Thumbnail Extractor"
-        subtitle="Pull a single great frame out of a video you own and save it as a PNG or JPEG — perfect for cover thumbnails and previews. Scrub to the exact moment and download, all in your browser."
+        title="YouTube Thumbnail Downloader"
+        subtitle="Paste a YouTube link to grab its thumbnails in every available size, or switch to your own video file and capture a still frame. Free, fast, and right in your browser."
       />
       <div className="container" style={{ padding: "28px 20px 64px" }}>
         <div className="prose">
@@ -60,33 +59,36 @@ export default function Page() {
 
           <StepCards
             steps={[
-              { title: "Choose your video", body: "Select a clip you own. It's read locally in your browser — never uploaded." },
-              { title: "Scrub to the frame", body: "Use the slider to land on the exact moment. Pause on a sharp, well-lit beat." },
-              { title: "Pick a format", body: "PNG for lossless quality (great for text overlays) or JPEG for a smaller file." },
-              { title: "Capture & download", body: "The frame is saved at the video's native resolution, straight to your device." },
+              { title: "Paste a YouTube link", body: "Drop in a watch, share, or Shorts URL (or the video ID) and click Get thumbnails." },
+              { title: "See every size", body: "We list each thumbnail YouTube publishes, from full HD down to medium, and skip the ones that do not exist." },
+              { title: "Download or save", body: "Click Download on the size you want, or open the image and choose Save image." },
+              { title: "Or use your own video", body: "Switch tabs to load a file you own, scrub to a frame, and save it as PNG or JPEG, all on your device." },
             ]}
           />
 
-          <h2>Why use a frame from your own video</h2>
+          <h2>Download YouTube thumbnails in any size</h2>
           <p>
-            A thumbnail taken from the video itself guarantees the cover matches
-            the content, so viewers get what they expect. It is instant and free
-           , no separate photo needed.
+            Every YouTube video has a set of thumbnail images served at fixed
+            sizes. Paste the link and this tool builds the direct image for each
+            size, so you can preview them side by side and download the exact
+            resolution you need, whether that is the full 1280 × 720 cover or a
+            smaller version for a list or preview.
           </p>
 
-          <h2>How to choose a strong frame</h2>
+          <h2>Grab a frame from a video you own</h2>
+          <p>
+            Sometimes the best thumbnail is already inside your footage. Switch
+            to the second tab, choose a video you own, and scrub to the perfect
+            moment. The frame is captured at the video&apos;s native resolution
+            and saved straight to your device, with nothing uploaded.
+          </p>
+
+          <h2>Tips for a strong thumbnail</h2>
           <ul>
             <li>Look for a clear, well-lit moment with a face or strong focal point.</li>
             <li>Pause on a still beat to avoid motion blur.</li>
             <li>Leave some empty space if you plan to add a title later.</li>
           </ul>
-
-          <h2>Match the platform</h2>
-          <p>
-            Platforms crop thumbnails differently, YouTube shows 16:9, vertical
-            feeds show a vertical crop. Pick a frame that still reads well when
-            cropped, and confirm dimensions with the metadata checker.
-          </p>
 
           <PermissionNote />
           <FaqSection faqs={faqs} />

@@ -374,7 +374,7 @@ export const POSTS: Post[] = [
       },
       {
         heading: "Saving a clip you have rights to",
-        html: `<p>If a creator grants permission and sends you the file directly, that is the cleanest path. If they point you to a direct video file you are allowed to use, our <a href="/tools/direct-mp4-downloader/">Direct Video File Downloader</a> can save a direct <code>.mp4</code> link after you confirm you have permission. It does not work on platform page URLs, by design.</p>`,
+        html: `<p>If a creator grants permission and sends you the file directly, that is the cleanest path, ask them to share the original export rather than a link. Keep their written permission with the file. Once you have your own copy, you can prepare it for re-use with browser-side tools like the <a href="/tools/video-resizer/">Video Resizer</a> or <a href="/tools/freeform-crop-video/">Freeform Crop Video</a>.</p>`,
       },
       {
         heading: "Store and label what you save",
@@ -405,13 +405,12 @@ export const POSTS: Post[] = [
         a: "A written reply from the creator agreeing to your specific use, ideally naming the video and how you will use it. Save that message.",
       },
       {
-        q: "Can your tool save any X link?",
-        a: "No. The Direct Video File Downloader only accepts direct video file links and rejects social-media page URLs, including X. It is for files you own or have permission to use.",
+        q: "Does Reelsavor download videos from X?",
+        a: "No. Reelsavor does not download videos from X or any platform. Our tools work on files you already have, videos you posted, or clips a creator shared with you directly and gave you permission to use.",
       },
     ],
     related: [
       { href: "/blog/public-video-vs-copyright-permission/", label: "Public video vs. copyright permission" },
-      { href: "/tools/direct-mp4-downloader/", label: "Direct Video File Downloader" },
       { href: "/blog/how-to-backup-your-own-social-media-videos/", label: "Backing up your own videos" },
       { href: "/blog/how-to-prepare-videos-for-upload/", label: "How to prepare videos for upload" },
     ],

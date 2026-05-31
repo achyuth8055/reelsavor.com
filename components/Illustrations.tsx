@@ -53,6 +53,48 @@ export function ToolIcon({ slug, size = 56 }: { slug: string; size?: number }) {
           <path d="M2 6h14a2 2 0 0 1 2 2v14" />
         </svg>
       );
+    case "youtube-thumbnail-resizer":
+      return (
+        <svg {...common}>
+          <rect x="3" y="5" width="18" height="14" rx="2" />
+          <circle cx="8.5" cy="10" r="1.5" />
+          <path d="M3 17l4.5-3.5 3 2.2L15 12l6 4.5" />
+        </svg>
+      );
+    case "extract-audio-from-video":
+      return (
+        <svg {...common}>
+          <rect x="3" y="6" width="11" height="12" rx="2" />
+          <path d="M6.5 12l3-2v4z" fill={stroke} stroke="none" />
+          <path d="M18 8v6.5" />
+          <circle cx="16.4" cy="15" r="1.6" />
+          <path d="M18 8l3-1" />
+        </svg>
+      );
+    case "screen-recorder":
+      return (
+        <svg {...common}>
+          <rect x="2" y="4" width="20" height="13" rx="2" />
+          <path d="M8 21h8M12 17v4" />
+          <circle cx="12" cy="10.5" r="3" />
+        </svg>
+      );
+    case "youtube-thumbnail-maker":
+      return (
+        <svg {...common}>
+          <rect x="3" y="4" width="18" height="14" rx="2" />
+          <circle cx="8" cy="9" r="1.5" />
+          <path d="M3 16l5-4 3 2" />
+          <path d="M14 13h5M14 16h3" />
+        </svg>
+      );
+    case "media-layout-editor":
+      return (
+        <svg {...common}>
+          <rect x="3" y="4" width="18" height="16" rx="2" />
+          <path d="M12 4v16M3 12h9" />
+        </svg>
+      );
     case "direct-mp4-downloader":
       return (
         <svg {...common}>

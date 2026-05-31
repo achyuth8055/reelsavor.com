@@ -57,7 +57,7 @@ export function chooseSupportedVideoMimeType(
 
 /**
  * Maps a MIME type (with or without a codecs= clause) to a safe file
- * extension. Unknown types fall back to "bin" — never to a misleading "mp4".
+ * extension. Unknown types fall back to "bin", never to a misleading "mp4".
  */
 export function mimeTypeToExtension(mime: string | undefined | null): string {
   if (!mime) return "bin";
@@ -407,7 +407,7 @@ export function gcd(a: number, b: number): number {
 }
 
 export function aspectRatioLabel(w: number, h: number): string {
-  if (!w || !h) return "—";
+  if (!w || !h) return "N/A";
   const d = gcd(Math.round(w), Math.round(h));
   return `${Math.round(w) / d}:${Math.round(h) / d}`;
 }

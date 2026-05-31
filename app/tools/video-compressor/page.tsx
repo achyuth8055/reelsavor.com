@@ -23,11 +23,11 @@ const faqs = [
   },
   {
     q: "What output format do I get?",
-    a: "Most browsers export WebM, which plays in Chrome, Edge, and Firefox. The tool detects what your browser supports and always matches the download's file extension to the real format — it never labels a file MP4 unless it truly is MP4.",
+    a: "Most browsers export WebM, which plays in Chrome, Edge, and Firefox. The tool detects what your browser supports and always matches the download's file extension to the real format, it never labels a file MP4 unless it truly is MP4.",
   },
   {
     q: "What if compression makes the file bigger?",
-    a: "Already-small or already-optimized videos can grow when re-encoded. The tool tells you honestly — it shows the file got larger, recommends keeping the original, and does not auto-download the larger file.",
+    a: "Already-small or already-optimized videos can grow when re-encoded. The tool tells you honestly, it shows the file got larger, recommends keeping the original, and does not auto-download the larger file.",
   },
   {
     q: "Why does compressing take a while?",
@@ -52,7 +52,7 @@ export default function Page() {
       <ToolHero
         slug="video-compressor"
         title="Video Compressor"
-        subtitle="Make a large video smaller without sending it anywhere. Pick a mode, preview the result, and download a lighter file — with an honest before/after so you never ship a bigger file by mistake."
+        subtitle="Make a large video smaller without sending it anywhere. Pick a mode, preview the result, and download a lighter file, with an honest before/after so you never ship a bigger file by mistake."
       />
       <div className="container" style={{ padding: "28px 20px 64px" }}>
         <div className="prose">
@@ -60,7 +60,7 @@ export default function Page() {
 
           <StepCards
             steps={[
-              { title: "Choose your video", body: "Select a clip you own. We read its resolution and size locally — nothing is uploaded." },
+              { title: "Choose your video", body: "Select a clip you own. We read its resolution and size locally, nothing is uploaded." },
               { title: "Pick a mode", body: "Auto preserves resolution (never upscales) and picks a sensible bitrate. Or choose Small, Balanced, or Higher quality." },
               { title: "Preview the result", body: "We validate the export and show a player plus an honest size comparison before any download." },
               { title: "Download or keep original", body: "If the file got smaller, download it. If it got larger, we recommend keeping your original." },
@@ -83,7 +83,7 @@ export default function Page() {
           </Callout>
 
           <Callout kind="mistake" title="Common mistakes">
-            Re-compressing an already-tiny clip (it can grow — keep the original);
+            Re-compressing an already-tiny clip (it can grow, keep the original);
             compressing the same file several times (quality stacks down); and
             expecting MP4 in every browser (most export WebM, which is normal).
           </Callout>

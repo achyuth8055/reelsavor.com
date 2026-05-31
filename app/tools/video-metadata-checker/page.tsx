@@ -51,7 +51,7 @@ export default function Page() {
       <ToolHero
         slug="video-metadata-checker"
         title="Video Metadata Checker"
-        subtitle="Find out exactly what you're working with. Drop in a video you own and instantly see its resolution, aspect ratio, duration, format, and file size — read locally, never uploaded."
+        subtitle="Find out exactly what you're working with. Drop in a video you own and instantly see its resolution, aspect ratio, duration, format, and file size, read locally, never uploaded."
         chips={["Runs in your browser", "No uploads", "Instant results"]}
       />
       <div className="container" style={{ padding: "28px 20px 64px" }}>
@@ -60,7 +60,7 @@ export default function Page() {
 
           <StepCards
             steps={[
-              { title: "Choose your video", body: "Drop in or select a clip you own. It's read locally — nothing is uploaded." },
+              { title: "Choose your video", body: "Drop in or select a clip you own. It's read locally, nothing is uploaded." },
               { title: "Read the details", body: "Resolution, aspect ratio, duration, file size, and format appear instantly." },
               { title: "Plan your next step", body: "Compare against your platform's specs, then resize or compress if needed." },
             ]}

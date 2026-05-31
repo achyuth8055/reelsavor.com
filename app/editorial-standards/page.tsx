@@ -50,7 +50,7 @@ export default function EditorialStandards() {
         <h2>How we test tool recommendations</h2>
         <p>
           Our tools run entirely in your browser. Before recommending a workflow
-          with one of them, we test the core path — selecting a file, processing
+          with one of them, we test the core path, selecting a file, processing
           it, validating the output, and confirming the exported file plays. We
           are explicit about browser support: in-browser video export commonly
           produces WebM, and we never label an exported file as MP4 unless the
@@ -77,8 +77,8 @@ export default function EditorialStandards() {
 
         <h2>How update dates are managed</h2>
         <p>
-          When we make a substantive change to a guide — updated steps, corrected
-          information, or new recommendations — we refresh its last updated date.
+          When we make a substantive change to a guide, updated steps, corrected
+          information, or new recommendations, we refresh its last updated date.
           Minor copy fixes may not change the date. The goal is that the update
           date reflects meaningful changes you can rely on.
         </p>
