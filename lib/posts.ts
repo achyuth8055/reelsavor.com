@@ -2597,5 +2597,218 @@ export const POSTS: Post[] = [
       { href: "/blog/how-to-prepare-videos-for-upload/", label: "How to prepare videos for upload" },
     ],
   },
+  {
+    slug: "how-to-extract-audio-from-your-own-videos",
+    title: "How to Extract Audio From Your Own Videos",
+    seoTitle: "How to Extract Audio From Your Own Videos (Easy Guide)",
+    description:
+      "Pull clean audio out of your own video files for podcasts, voiceovers, music clips, and transcripts. A practical guide using simple tools, no quality loss tricks required.",
+    date: "2026-05-30",
+    category: "Workflow",
+    readingTime: "7 min read",
+    intro: [
+      `There are dozens of good reasons to separate the sound from a video you made: turning a talking-head clip into a podcast episode, saving a voiceover to reuse, grabbing a music bed you recorded, or sending audio to a transcription service. Whatever the goal, the process is the same, and it is much simpler than most people expect.`,
+      `This guide walks through extracting audio from videos <strong>you created and own</strong>. We will stick to your own files throughout, because pulling audio (or any media) from someone else's video can run into copyright and platform rules. Everything below is about getting clean sound out of your own footage with as little quality loss as possible.`,
+    ],
+    sections: [
+      {
+        heading: "Decide what you actually need first",
+        html: `<p>Before you export anything, get clear on the destination, because it changes the format and settings you should pick.</p>
+        <ul>
+          <li><strong>Podcast or music:</strong> you want a high-quality, widely supported file, usually MP3 or AAC at a healthy bitrate.</li>
+          <li><strong>Voiceover to re-edit:</strong> keep the highest quality you can, ideally a lossless or near-lossless export, so you do not stack compression when you drop it back into a project.</li>
+          <li><strong>Transcription or notes:</strong> quality barely matters here. A small MP3 is plenty, and a smaller file uploads faster to whatever tool reads it.</li>
+        </ul>
+        <p>Knowing the target up front means you only export once, instead of redoing it when the file turns out wrong for the job.</p>`,
+      },
+      {
+        heading: "Use a browser tool for a quick extract",
+        html: `<p>The fastest path for a one-off is a browser-based extractor that never uploads your file to a server. Open the <a href="/tools/extract-audio-from-video/">Extract Audio From Video</a> tool, drop in your clip, and let it pull the audio track out locally on your own device. Because the work happens in your browser, your video does not leave your computer, which matters for anything private or unreleased.</p>
+        <p>This approach is ideal when you have a single video and want the sound out of it in under a minute, without installing anything. Pick your output format, export, and you are done.</p>`,
+      },
+      {
+        heading: "Understand audio formats in one minute",
+        html: `<p>You do not need to be an audio engineer, but a little context helps you choose well:</p>
+        <ul>
+          <li><strong>MP3</strong> is the universal choice. It plays everywhere, files are small, and quality is fine for podcasts, voice, and casual music. This is the safe default.</li>
+          <li><strong>AAC / M4A</strong> sounds slightly better than MP3 at the same size and is the native format inside most modern video files, so extracting to it can avoid re-encoding.</li>
+          <li><strong>WAV</strong> is uncompressed and lossless. It is large but perfect when you plan to edit further, because you are not throwing away quality before you start.</li>
+        </ul>
+        <p>If you are unsure, export MP3 for sharing and WAV for editing. Those two cover almost every situation a creator runs into.</p>`,
+      },
+      {
+        heading: "Keep the quality as high as the source allows",
+        html: `<p>An important truth: extracting audio cannot make it sound <em>better</em> than the original recording. The best you can do is avoid making it worse. A few habits protect quality:</p>
+        <ol>
+          <li>Export from your <strong>master video file</strong>, not a version that has already been compressed and re-uploaded somewhere.</li>
+          <li>Choose a bitrate of at least 192 kbps for MP3, or 256 kbps and up for music you care about.</li>
+          <li>If you only need to trim part of the audio, cut it from the extracted file rather than re-exporting repeatedly, since each export is a chance to lose fidelity.</li>
+        </ol>
+        <p>For more on why repeated processing degrades media, see <a href="/blog/why-your-video-loses-quality-after-upload/">why your video loses quality after upload</a>, the same principle applies to sound.</p>`,
+      },
+      {
+        heading: "Extract audio on your phone",
+        html: `<p>If your video lives on your phone, you have a couple of options without a computer. Many free video editor apps let you import a clip, mute or detach the audio, and export just the sound. Voice memo and podcast apps often accept video imports too and will save the audio track for you.</p>
+        <p>The browser tool also works on mobile: open the page in your phone's browser, choose your video from your camera roll, and export. It is often quicker than hunting for the right app, especially for a single clip.</p>`,
+      },
+      {
+        heading: "Clean up the audio after you extract it",
+        html: `<p>Raw extracted audio sometimes needs a light polish before it is ready to publish. A few quick fixes go a long way:</p>
+        <ul>
+          <li><strong>Trim the silence</strong> at the start and end so the file begins and ends cleanly.</li>
+          <li><strong>Normalize the volume</strong> so a quiet recording is brought up to a comfortable, consistent level.</li>
+          <li><strong>Cut background hiss</strong> with a noise-reduction filter if you recorded in a less-than-ideal room.</li>
+        </ul>
+        <p>Free audio editors handle all three. You do not need anything fancy, just enough to make the listener's experience smooth. Save the cleaned version under a new name so your raw extract stays intact as a fallback.</p>`,
+      },
+      {
+        heading: "Organize your audio so you can reuse it",
+        html: `<p>Audio you pull from videos is reusable gold: intro stings, recurring voiceovers, music beds, and sound effects can all serve future projects. The trick is being able to find them later. Store extracted audio alongside the project it came from, with a clear name like <code>2026-05-30_intro-vo_master.wav</code>, so the date, purpose, and quality are obvious at a glance.</p>
+        <p>If you produce a lot of content, fold these files into a wider system. Our guide on <a href="/blog/how-to-organize-your-short-form-video-library/">organizing your short-form video library</a> applies directly to audio too, and a tidy structure makes backing everything up far easier.</p>`,
+      },
+      {
+        heading: "Back up the audio you cannot recreate",
+        html: `<p>Some audio is effectively irreplaceable: a one-take interview, a live performance, a voiceover recorded in a moment you cannot repeat. Treat those extracts the way you treat your best video masters and keep copies in more than one place. A working drive plus a cloud sync is enough for most creators, and it means a lost phone or failed disk never wipes out a recording you can never capture again. The full routine in <a href="/blog/how-to-backup-your-own-social-media-videos/">how to back up your own social media videos</a> covers audio just as well as video, so you can protect both with a single habit.</p>`,
+      },
+    ],
+    faqs: [
+      {
+        q: "How do I extract audio from a video for free?",
+        a: "Use a browser-based tool like the Extract Audio From Video tool, which pulls the audio out locally on your device, or a free video editor app on your phone. Both let you export an audio file without paying for software.",
+      },
+      {
+        q: "What is the best format to extract audio to?",
+        a: "Use MP3 for sharing, podcasts, and transcripts because it plays everywhere at a small size. Use WAV when you plan to edit further, since it is lossless and avoids stacking compression.",
+      },
+      {
+        q: "Does extracting audio reduce its quality?",
+        a: "Extracting itself does not improve quality and, if you choose a low bitrate or re-export repeatedly, it can reduce it. Export from your master file at a healthy bitrate to keep the sound as good as the source.",
+      },
+      {
+        q: "Can I extract audio from a video on my phone?",
+        a: "Yes. Many free editor apps let you detach and export the audio track, and the browser tool also works on mobile by selecting a video from your camera roll and exporting the sound.",
+      },
+      {
+        q: "Is it legal to extract audio from a video?",
+        a: "It is fine for videos you created and own. Pulling audio from someone else's content can run into copyright and platform rules, so stick to your own footage or material you have clear permission to use.",
+      },
+      {
+        q: "What bitrate should I use for extracted audio?",
+        a: "At least 192 kbps for MP3 voice and 256 kbps or higher for music you care about. Higher bitrates preserve more detail at the cost of a larger file.",
+      },
+      {
+        q: "Can I get just part of the audio from a video?",
+        a: "Yes. Extract the full audio first, then trim the section you need in a free audio editor. Cutting from the extracted file avoids re-exporting the whole video repeatedly.",
+      },
+    ],
+    related: [
+      { href: "/tools/extract-audio-from-video/", label: "Extract Audio From Video tool" },
+      { href: "/blog/why-your-video-loses-quality-after-upload/", label: "Why your video loses quality after upload" },
+      { href: "/blog/how-to-organize-your-short-form-video-library/", label: "Organize your short-form video library" },
+      { href: "/blog/how-to-backup-your-own-social-media-videos/", label: "Back up your own social media videos" },
+    ],
+  },
+  {
+    slug: "how-to-make-a-youtube-thumbnail-that-gets-clicks",
+    title: "How to Make a YouTube Thumbnail That Gets Clicks",
+    seoTitle: "How to Make a YouTube Thumbnail That Gets Clicks",
+    description:
+      "A practical guide to designing YouTube thumbnails that earn clicks: the right size, readable text, strong faces and contrast, and tools to build and resize yours fast.",
+    date: "2026-06-01",
+    category: "Workflow",
+    readingTime: "8 min read",
+    intro: [
+      `Your thumbnail is the single most important piece of marketing your video has. It is the first thing a viewer sees, often before the title, and it decides in a fraction of a second whether they keep scrolling or click. Two videos with identical content can have wildly different view counts purely because one had a stronger thumbnail.`,
+      `This guide covers how to design thumbnails that earn the click without resorting to misleading clickbait. We will look at the correct size, the design choices that actually move the needle, and the simplest way to build and export yours. Everything here uses your own images and footage, so the thumbnail genuinely represents your video.`,
+    ],
+    sections: [
+      {
+        heading: "Get the size and dimensions right",
+        html: `<p>Start with the technical baseline, because a thumbnail that displays badly loses before the design even matters. YouTube's recommended size is <strong>1280 x 720 pixels</strong>, a 16:9 ratio, with a minimum width of 640 pixels. Keep the file under the platform limit (around 2 MB) and use JPG, PNG, or WebP.</p>
+        <p>If you already have an image at the wrong dimensions, the <a href="/tools/youtube-thumbnail-resizer/">YouTube Thumbnail Resizer</a> reshapes it to the exact 1280 x 720 spec in seconds, so it looks crisp everywhere from a phone feed to a TV screen.</p>`,
+      },
+      {
+        heading: "Design for the smallest size it will appear",
+        html: `<p>The biggest mistake creators make is designing on a large screen and forgetting that most viewers see the thumbnail tiny, sometimes barely bigger than a postage stamp on a phone. A design crammed with detail turns to mush at that size.</p>
+        <p>The fix is ruthless simplicity. Build your thumbnail, then shrink it down to the size of a thumbnail in a real feed and ask whether you can still tell what it is at a glance. If you cannot, cut elements until you can. One clear subject and a few big words beat a busy collage every time.</p>`,
+      },
+      {
+        heading: "Use bold, readable text, sparingly",
+        html: `<p>Text on a thumbnail should add to the title, not repeat it. Three to five large words is the sweet spot. Any more and nobody reads it at small sizes.</p>
+        <ul>
+          <li>Pick a <strong>thick, bold font</strong>, thin or decorative fonts vanish when scaled down.</li>
+          <li>Add a contrasting outline or drop shadow so the words stay legible over any background.</li>
+          <li>Keep text out of the bottom-right corner, where the video duration stamp covers it.</li>
+        </ul>
+        <p>The goal is a phrase a viewer can absorb instantly, like "I Tried It" or "Big Mistake," that creates curiosity the title then satisfies.</p>`,
+      },
+      {
+        heading: "Lead with faces and emotion",
+        html: `<p>Human faces draw the eye more than almost anything else, and expressive faces draw it hardest. A genuine reaction, surprise, delight, concentration, gives the viewer an emotional hook before they have read a single word.</p>
+        <p>If your video features you or a person, use a clear, well-lit shot of their face as the focal point. Pull a sharp frame straight from your footage with the <a href="/tools/video-thumbnail-extractor/">Thumbnail Extractor</a>, then build your design around it. Even for topics without people, a close-up of the key object with strong lighting works far better than a wide, distant shot.</p>`,
+      },
+      {
+        heading: "Make contrast and color do the heavy lifting",
+        html: `<p>Your thumbnail competes against a wall of other thumbnails, so it has to stand out from the crowd, not blend in. High contrast is how you win that fight:</p>
+        <ul>
+          <li>Use <strong>bright, saturated colors</strong> that pop against YouTube's white and dark backgrounds.</li>
+          <li>Separate your subject from the background with a glow, outline, or a blurred backdrop so the focal point reads instantly.</li>
+          <li>Avoid color combinations that vibrate or muddy together, clean separation reads faster.</li>
+        </ul>
+        <p>A quick test: if your thumbnail were placed next to ten competitors, would your eye land on it first? If not, push the contrast harder.</p>`,
+      },
+      {
+        heading: "Build it fast with a thumbnail maker",
+        html: `<p>You do not need heavy design software to make a strong thumbnail. The <a href="/tools/youtube-thumbnail-maker/">YouTube Thumbnail Maker</a> lets you start from the correct 1280 x 720 canvas, drop in your image, add bold text, and export a ready-to-upload file, all in your browser. Starting from the right canvas size means you never have to guess at dimensions or fix a stretched image later.</p>
+        <p>Working from a template-style tool also keeps your channel consistent. Reusing the same font, text placement, and color treatment across videos builds a recognizable look that regular viewers start to spot in their feed before they even read your name.</p>`,
+      },
+      {
+        heading: "Match the thumbnail to the video honestly",
+        html: `<p>It is tempting to over-promise with a sensational thumbnail, but misleading viewers backfires fast. When the video does not deliver what the thumbnail implied, people click away quickly, and YouTube reads that short watch time as a sign the video is not worth recommending. A thumbnail that earns the click but loses the viewer is worse than one that earns fewer, better-matched clicks.</p>
+        <p>Aim for the honest sweet spot: a thumbnail that is dramatic and curiosity-driving but still accurately represents what the viewer will get. Curiosity that the video satisfies builds trust and keeps people watching, which is what actually grows a channel over time.</p>`,
+      },
+      {
+        heading: "Test, compare, and keep your winners",
+        html: `<p>Even experienced creators cannot always predict what will land, so treat thumbnails as something to learn from rather than set and forget. If a video underperforms, try a new thumbnail, the platform lets you swap it on a published video, and watch whether the click-through rate moves. Over time you will notice patterns in what works for your audience: a certain expression, a color, a text style.</p>
+        <p>Save every thumbnail you create in an organized folder with the video it belongs to, named clearly so you can find your best performers and reuse what works. The system in <a href="/blog/how-to-organize-your-short-form-video-library/">organizing your short-form video library</a> applies here too, and keeping your winning thumbnails handy turns each success into a template for the next one.</p>`,
+      },
+    ],
+    faqs: [
+      {
+        q: "What is the correct size for a YouTube thumbnail?",
+        a: "1280 x 720 pixels in a 16:9 ratio, with a minimum width of 640 pixels and a file size under about 2 MB. Use JPG, PNG, or WebP. The YouTube Thumbnail Resizer can set any image to this spec.",
+      },
+      {
+        q: "What makes a YouTube thumbnail get more clicks?",
+        a: "Simplicity that reads at small sizes, bold legible text of three to five words, an expressive face or clear focal subject, and high contrast that stands out in a crowded feed, all while honestly representing the video.",
+      },
+      {
+        q: "How much text should a thumbnail have?",
+        a: "Three to five large, bold words at most. The text should add to the title, not repeat it, and use a thick font with an outline or shadow so it stays readable when the thumbnail is shown small.",
+      },
+      {
+        q: "How do I make a thumbnail from my video?",
+        a: "Pull a sharp frame from your footage with the Thumbnail Extractor, then build your design around it in the YouTube Thumbnail Maker by adding text and adjusting the layout before exporting at 1280 x 720.",
+      },
+      {
+        q: "Should I use my face in thumbnails?",
+        a: "If your video features a person, yes, expressive faces draw the eye and create an emotional hook. For topics without people, a well-lit close-up of the key object works in the same way.",
+      },
+      {
+        q: "Is clickbait good for thumbnails?",
+        a: "Misleading thumbnails earn clicks but lose viewers fast, and short watch time hurts how often YouTube recommends the video. Aim for a dramatic but honest thumbnail that the video actually delivers on.",
+      },
+      {
+        q: "Can I change a thumbnail after publishing?",
+        a: "Yes. YouTube lets you swap the thumbnail on a published video, which makes it easy to test a new design and watch whether the click-through rate improves.",
+      },
+    ],
+    related: [
+      { href: "/tools/youtube-thumbnail-maker/", label: "YouTube Thumbnail Maker tool" },
+      { href: "/tools/youtube-thumbnail-resizer/", label: "YouTube Thumbnail Resizer tool" },
+      { href: "/tools/video-thumbnail-extractor/", label: "Thumbnail Extractor tool" },
+      { href: "/blog/how-to-organize-your-short-form-video-library/", label: "Organize your short-form video library" },
+    ],
+  },
 /* POSTS_END */
 ];
